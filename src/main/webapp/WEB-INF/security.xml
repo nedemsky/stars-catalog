@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+              http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <http pattern="/img/**" security="none"/>
+    <http pattern="/css/**" security="none"/>
+    <http pattern="/js/**" security="none"/>
+
+
+	<http auto-config="true">
+		<intercept-url pattern="/admin**" access="ROLE_ADMIN" />
+		<intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_USER" />
+		<!-- form-login
+        	login-page="/login.jsp"
+        	login-processing-url="/j_spring_security_check.action"
+        	authentication-failure-url="/login?error"
+        	default-target-url="/stars"
+        	always-use-default-target="true"/-->
+		<!-- logout logout-success-url="/login?logout" /-->
+	</http>
+
+
+
+
+
+
+	<authentication-manager>
+	  <authentication-provider>
+	    <user-service>
+		<user name="user" password="user" authorities="ROLE_USER" />
+		<user name="nik" password="nik" authorities="ROLE_USER" />
+		<user name="admin" password="123456" authorities="ROLE_ADMIN" />
+		<user name="dba" password="123456" authorities="ROLE_DBA" />
+	    </user-service>
+	  </authentication-provider>
+	</authentication-manager>
+
+    <global-method-security>
+        <protect-pointcut expression="execution(* *..service.UserManager.removeUser(..))" access="ROLE_ADMIN"/>
+    </global-method-security>
+
+    <!-- Override userSecurityAdvice bean in appfuse-service to allow any role to update a user. -->
+    <!--beans:bean id="userSecurityAdvice" class="kz.nik.webapp.UserSecurityAdvice"/-->
+</beans:beans>
