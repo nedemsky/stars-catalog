@@ -104,6 +104,14 @@
 								<legend>Star Form</legend>
 
 								<div class="form-group">
+									<label for="idInput" class="col-lg-3 control-label">Id</label>
+									<div class="col-lg-9">
+										<form:input type="text" class="form-control" path="id"
+											id="idInput" placeholder="Id" />
+										<form:errors path="name" cssClass="error" />
+									</div>
+								</div>
+								<div class="form-group">
 									<label for="userNameInput" class="col-lg-3 control-label">Name</label>
 									<div class="col-lg-9">
 										<form:input type="text" class="form-control" path="name"

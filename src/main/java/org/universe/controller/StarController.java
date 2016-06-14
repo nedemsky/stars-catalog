@@ -99,6 +99,7 @@ public class StarController {
         mv.addObject("message", "Star "+star.getName()+" was deleted");
 		List<Star> listStar = starService.getStars();
 		mv.addObject("stars", listStar);
+		mv.setViewName("stars");
 		return mv;
         //return new ModelAndView("stars");
 	}

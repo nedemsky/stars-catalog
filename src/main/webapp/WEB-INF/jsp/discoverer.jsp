@@ -140,16 +140,14 @@
 <br>
 <h3>Discoverers List</h3>
 <c:if test="${!empty listDiscoverers}">
-	<table  class="col-lg-3 control-label" style="width:100%" align="left" border="1" colspan="30" rowspan="30">
+	<table class="col-lg-3 control-label" style="width:100%" align="left" border="1" >
 	<tr>
 		<th width="120">Discoverer Name</th>
-		<th width="60">Edit</th>
 		<th width="60">Delete</th>
 	</tr>
 	<c:forEach items="${listDiscoverers}" var="discoverer">
 		<tr>
 			<td>${discoverer.name}</td>
-			<td><a href="<c:url value='/edit/${discoverer.name}' />" >Edit</a></td>
 			<td><a href="<c:url value='/remove/${discoverer.name}' />" >Delete</a></td>
 		</tr>
 	</c:forEach>

@@ -17,8 +17,8 @@ public interface DiscovererMapper {
 	public void addDiscoverer(Discoverer discoverer);
 	
 	
-	@Update("UPDATE discoverer SET name=#{name}")
-	@Options(useGeneratedKeys=true, keyProperty="name", flushCache=true, keyColumn="name")
+	@Update("UPDATE discoverer SET name=#{name} where name=#{name}")
+	//@Options(useGeneratedKeys=true, keyProperty="name", flushCache=true, keyColumn="name")
 	public void updateDiscoverer(Discoverer discoverer);
 	
 	

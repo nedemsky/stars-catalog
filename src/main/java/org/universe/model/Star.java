@@ -27,7 +27,6 @@ public class Star {
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -38,7 +37,6 @@ public class Star {
 	public String getAltitude() {
 		return altitude;
 	}
-
 	public void setAltitude(String altitude) {
 		this.altitude = altitude;
 	}
@@ -46,7 +44,6 @@ public class Star {
 	public String getLongitude() {
 		return longitude;
 	}
-
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
@@ -54,7 +51,6 @@ public class Star {
 	public String getClazz() {
 		return clazz;
 	}
-
 	public void setClazz(String clazz) {
 		this.clazz = clazz;
 	}
@@ -62,7 +58,6 @@ public class Star {
 	public String getDiscoverer() {
 		return discoverer;
 	}
-
 	public void setDiscoverer(String discoverer) {
 		this.discoverer = discoverer;
 	}
@@ -73,7 +68,6 @@ public class Star {
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}

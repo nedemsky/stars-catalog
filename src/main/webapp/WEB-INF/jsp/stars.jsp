@@ -101,7 +101,7 @@
 
 <form:errors path="discoverer" cssClass="error" />
 
-<table class="col-lg-3 control-label" style="width:100%" align="left" border="1" colspan="30" rowspan="30">
+<table class="col-lg-3 control-label" style="width:100%" align="left" border="1" >
     <thead>
             <th data-field="name">Name</th>
             <th data-field="a1">Altitude</th>

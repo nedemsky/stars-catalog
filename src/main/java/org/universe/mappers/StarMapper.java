@@ -24,8 +24,8 @@ public interface StarMapper {
 	
 	@Update("UPDATE star SET "
 			+ "name=#{name},altitude=#{altitude}, longitude=#{longitude}, "
-			+ "clazz=#{clazz}, discoverer=#{discoverer}")
-	@Options(useGeneratedKeys=true, keyProperty="id", flushCache=true, keyColumn="id")
+			+ "clazz=#{clazz}, discoverer=#{discoverer} where id=#{id}")
+	//@Options(useGeneratedKeys=true, keyProperty="id", flushCache=true, keyColumn="id")
 	public void updateStar(Star star);
 	
 	
@@ -33,13 +33,13 @@ public interface StarMapper {
 	void deleteStar(Integer id);
 	
 		
-	@Select("SELECT Id as Id, NAME as name, altitude as altitude, "
+	@Select("SELECT ID as id, NAME as name, altitude as altitude, "
 			+ "longitude as longitude, clazz as clazz, "
 			+ "discoverer as discoverer "
 			+ "FROM star WHERE name = #{name}")
 	public Star getStarByName(String name);
 	
-	@Select("SELECT Id as Id, NAME as name, altitude as altitude, "
+	@Select("SELECT ID as id, NAME as name, altitude as altitude, "
 			+ "longitude as longitude, clazz as clazz, "
 			+ "discoverer as discoverer "
 			+ "FROM star WHERE id = #{id}")
